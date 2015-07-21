@@ -10,4 +10,5 @@ public interface LayoutOrganizer {
 
 In given repository, I've added two component organization strategies: _SingleColumnLayout_, _SingleRowLayout_.
 
-To tell the truth, it was very useful in my work. For *DEMO*, just run *LayoutOrganizerDemo* _(later I try to add runnable jar or even jnlp file)_
+To tell the truth, it was very useful in my work.
+*[DEMO](https://github.com/oleg-cherednik/cop.swing.layout-organizer/blob/master/demo/cop.swing.layout-organizer-1.0.jar)*
