@@ -241,7 +241,6 @@ public class LayoutOrganizerDemo extends JDialog implements ActionListener {
             add(new JLabel("Section: " + id), BorderLayout.CENTER);
             setBorder(BorderFactory.createEtchedBorder());
         }
-
     }
 }
 
