@@ -39,10 +39,10 @@ task standalone(type: Jar) {
     with jar
 }
 
-task dist(type: Copy) {
-    description 'Copy demo to dist folder.'
+task demo(type: Copy) {
+    description 'Copy demo to separate folder.'
 
     from 'build/libs'
-    into 'dist'
+    into 'demo'
     include "**/$jar.baseName-$project.version" + '.jar'
 }
