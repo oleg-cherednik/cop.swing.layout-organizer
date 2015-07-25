@@ -1,7 +1,8 @@
-group 'cop.swing.controls'
+group 'cop.swing'
 version '1.0'
 
 apply plugin: 'java'
+apply plugin: 'maven'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -13,10 +14,7 @@ repositories {
 dependencies {
     compile 'org.apache.commons:commons-lang3:3.4'
     compile 'commons-collections:commons-collections:3.2.1'
-    compile 'commons-io:commons-io:2.4'
     compile 'javax.validation:validation-api:1.1.0.Final'
-
-    testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
 task standalone(type: Jar) {
@@ -45,4 +43,13 @@ task demo(type: Copy) {
     from 'build/libs'
     into 'demo'
     include "**/$jar.baseName-$project.version" + '.jar'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
 }

@@ -8,7 +8,7 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
@@ -32,7 +32,7 @@ import java.util.Random;
  * @author Oleg Cherednik
  * @since 18.07.2015
  */
-public class LayoutOrganizerDemo extends JDialog implements ActionListener {
+public class LayoutOrganizerDemo extends JFrame implements ActionListener {
     private final LayoutOrganizerPanel panel = new LayoutOrganizerPanel(SettingsPanel.SINGLE_COLUMN);
     private final SettingsPanel settingsPanel = new SettingsPanel(panel);
 
@@ -50,7 +50,7 @@ public class LayoutOrganizerDemo extends JDialog implements ActionListener {
         panel.setBackground(Color.gray);
 
         setSize(800, 500);
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     // ========== ActionListener ==========
