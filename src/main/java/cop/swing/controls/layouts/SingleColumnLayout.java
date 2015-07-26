@@ -30,14 +30,16 @@ public class SingleColumnLayout extends AbstractLayoutOrganizer {
      * <li>{@link SwingConstants#CENTER} - default</li>
      * <li>{@link SwingConstants#NORTH}</li>
      * <li>{@link SwingConstants#SOUTH}</li>
+     * <li>{@link SwingConstants#LEADING}, equals with {@link SwingConstants#NORTH}</li>
+     * <li>{@link SwingConstants#TRAILING}, equals with {@link SwingConstants#SOUTH}</li>
      * </ul>
      */
     public void setAlignment(int alignment) {
         if (alignment == SwingConstants.CENTER)
             this.alignment = GridBagConstraints.CENTER;
-        else if (alignment == SwingConstants.NORTH)
+        else if (alignment == SwingConstants.NORTH || alignment == SwingConstants.LEADING)
             this.alignment = GridBagConstraints.NORTH;
-        else if (alignment == SwingConstants.SOUTH)
+        else if (alignment == SwingConstants.SOUTH || alignment == SwingConstants.TRAILING)
             this.alignment = GridBagConstraints.SOUTH;
     }
 

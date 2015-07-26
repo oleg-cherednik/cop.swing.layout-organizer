@@ -32,14 +32,16 @@ public class SingleRowLayout extends AbstractLayoutOrganizer {
      * <li>{@link SwingConstants#CENTER} - default</li>
      * <li>{@link SwingConstants#WEST}</li>
      * <li>{@link SwingConstants#EAST}</li>
+     * <li>{@link SwingConstants#LEADING}, equals with {@link SwingConstants#WEST}</li>
+     * <li>{@link SwingConstants#TRAILING}, equals with {@link SwingConstants#EAST}</li>
      * </ul>
      */
     public void setAlignment(int alignment) {
         if (alignment == SwingConstants.CENTER)
             this.alignment = GridBagConstraints.CENTER;
-        else if (alignment == SwingConstants.WEST)
+        else if (alignment == SwingConstants.WEST || alignment == SwingConstants.LEADING)
             this.alignment = GridBagConstraints.WEST;
-        else if (alignment == SwingConstants.EAST)
+        else if (alignment == SwingConstants.EAST || alignment == SwingConstants.TRAILING)
             this.alignment = GridBagConstraints.EAST;
     }
 

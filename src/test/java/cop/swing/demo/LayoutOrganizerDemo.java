@@ -212,7 +212,9 @@ public class LayoutOrganizerDemo extends JFrame implements ActionListener {
             NORTH("North", SwingConstants.NORTH),
             SOUTH("South", SwingConstants.SOUTH),
             WEST("West", SwingConstants.WEST),
-            EAST("East", SwingConstants.EAST);
+            EAST("East", SwingConstants.EAST),
+            LEADING("Leading", SwingConstants.LEADING),
+            TRAILING("Trailing", SwingConstants.TRAILING);
 
             private final String title;
             public final int value;

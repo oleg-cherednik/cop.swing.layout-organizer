@@ -20,8 +20,6 @@ import java.util.Collection;
  */
 public class LayoutOrganizerPanel extends JPanel {
     private int preferredWidth;
-    private int componentCount;
-
     protected LayoutOrganizer layoutOrganizer;
 
     public LayoutOrganizerPanel() {
