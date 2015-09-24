@@ -85,6 +85,28 @@ public class LayoutOrganizerPanel extends JPanel {
         preferredWidth = width;
     }
 
+    private Component findCompAt(int x, int y, boolean ignoreEnabled) {
+        synchronized (getTreeLock()) {
+            if (isVisible())
+                return findCompAtImpl(x, y, ignoreEnabled);
+        }
+        return null;
+    }
+
+    private Component findCompAtImpl(int x, int y, boolean ignoreEnabled) {
+        if (!Thread.holdsLock(getTreeLock()))
+            throw new IllegalStateException("This function should be called while holding treeLock");
+
+        if (!(contains(x, y) && isVisible() && (ignoreEnabled || isEnabled())))
+            return null;
+
+        for (Component comp : getComponents())
+            if (comp != null && comp.contains(x - comp.getX(), y - comp.getY()))
+                return comp;
+
+        return this;
+    }
+
     // ========== Component ==========
 
     @Override
@@ -112,6 +134,11 @@ public class LayoutOrganizerPanel extends JPanel {
     }
 
     // ========== Container ==========
+
+    @Override
+    public Component findComponentAt(int x, int y) {
+        return findCompAt(x, y, true);
+    }
 
     @Override
     public void remove(Component comp) {
