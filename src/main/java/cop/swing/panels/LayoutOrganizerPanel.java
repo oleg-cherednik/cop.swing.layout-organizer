@@ -57,6 +57,16 @@ public class LayoutOrganizerPanel extends JPanel {
         updateUI();
     }
 
+    /**
+     * Returns current given component position in the current container or <t>-1</t> if it's not found or given component is {@code null}.
+     *
+     * @param component existed component
+     * @return given component position for current container
+     */
+    public int getComponentPosition(Component component) {
+        return ArrayUtils.indexOf(getComponents(), component);
+    }
+
     public void setComp(Collection<? extends Component> components) {
         removeAll();
 
